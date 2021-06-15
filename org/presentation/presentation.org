@@ -27,10 +27,8 @@ See [[Emacs Setup]] below for local buffer variables
 
 #+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
 
-#+LATEX_HEADER: \usepackage{sourcecodepro}
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{array}
-#+LATEX_HEADER: \usepackage{listings}
 #+LATEX_HEADER: \usepackage{multirow}
 #+LATEX_HEADER: \usepackage{caption}
 #+LATEX_HEADER: \usepackage{graphicx}
@@ -46,37 +44,26 @@ See [[Emacs Setup]] below for local buffer variables
 #+LATEX_HEADER: \usepgfplotslibrary{dateplot}
 
 #+LATEX_HEADER: \definecolor{Base}{HTML}{191F26}
-#+LATEX_HEADER: \definecolor{Accent}{HTML}{b10000}
+
+# #+LATEX_HEADER: \definecolor{Accent}{HTML}{b10000}
+# #+LATEX_HEADER: \colorlet{Accent}{PineGreen}
+# #+LATEX_HEADER: \colorlet{Accent}{OliveGreen!85!Black}
+#+LATEX_HEADER: \colorlet{Accent}{BrickRed}
+
 #+LATEX_HEADER: \colorlet{Highlight}{Accent!18}
 
 #+LATEX_HEADER: \setbeamercolor{alerted text}{fg=Accent}
 #+LATEX_HEADER: \setbeamercolor{frametitle}{fg=Accent,bg=normal text.bg}
 #+LATEX_HEADER: \setbeamercolor{normal text}{bg=black!2,fg=Base}
 
+#+LATEX_HEADER: \usefonttheme{professionalfonts}
 #+LATEX_HEADER: \usepackage{newpxtext}
 #+LATEX_HEADER: \usepackage{newpxmath}
+
+#+LATEX_HEADER: \usepackage{minted}
+
 #+LATEX_HEADER: \usepackage{DejaVuSansMono}
 #+LATEX_HEADER: \setmonofont{DejaVuSansMono}
-
-#+LATEX_HEADER: \lstset{ %
-#+LATEX_HEADER:   backgroundcolor={},
-#+LATEX_HEADER:   basicstyle=\ttfamily\scriptsize,
-#+LATEX_HEADER:   breakatwhitespace=true,
-#+LATEX_HEADER:   breaklines=true,
-#+LATEX_HEADER:   captionpos=n,
-#+LATEX_HEADER:   commentstyle=\color{Accent},
-# #+LATEX_HEADER:   escapeinside={\%*}{*)},
-#+LATEX_HEADER:   extendedchars=true,
-#+LATEX_HEADER:   frame=n,
-#+LATEX_HEADER:   keywordstyle=\color{Accent},
-#+LATEX_HEADER:   rulecolor=\color{black},
-#+LATEX_HEADER:   showspaces=false,
-#+LATEX_HEADER:   showstringspaces=false,
-#+LATEX_HEADER:   showtabs=false,
-#+LATEX_HEADER:   stepnumber=2,
-#+LATEX_HEADER:   stringstyle=\color{gray},
-#+LATEX_HEADER:   tabsize=2,
-#+LATEX_HEADER: }
 #+LATEX_HEADER: \renewcommand*{\UrlFont}{\ttfamily\smaller[2]\relax}
 #+LATEX_HEADER: \addtobeamertemplate{block begin}{}{\justifying}
 
@@ -139,5 +126,5 @@ modified  locally to  the buffer.  This allows  using XeLaTeX  for exporting  to
 beamer pdf.
 
 # Local Variables:
-# eval: (setq-local org-latex-pdf-process (list "latexmk -xelatex %f"))
+# eval: (setq-local org-latex-pdf-process (list "latexmk -xelatex -shell-escape %f"))
 # End:
